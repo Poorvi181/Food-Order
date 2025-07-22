@@ -1,4 +1,5 @@
 import tkinter as tk
+import tkinter.messagebox
 from tkinter import ttk
 
 win = tk.Tk()
@@ -18,7 +19,8 @@ ttk.Combobox(win, values=["Cola", "Fanta", "Orange Juice", "Water", "None"]).pac
 
 tk.Label(win, text="What dessert would you like: An Ice Cream, an Ice Lolly or a Chocolate Cake or None?", bg='red').pack()
 ttk.Combobox(win, values=["Ice Cream", "Ice Lolly", "Chocolate Cake", "None"]).pack()
-
-tk.Button(win, text="Submit Order").pack(pady=10)
+def m():
+    tkinter.messagebox.showinfo("Order","You order is here!")
+tk.Button(win, text="Submit Order",command=m).pack(pady=10)
 
 win.mainloop()
